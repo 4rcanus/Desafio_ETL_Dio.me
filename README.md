@@ -1,17 +1,9 @@
-# <img src="https://avatars1.githubusercontent.com/u/26231823?s=280&v=4" width="80" height="80"> Desafio IA Generativa com Python
-Desafio de Projeto - Explorando IA Generativa em um Pipeline de ETL com Python
-
-
-### Link do Projeto
-
-Visite o Desafio [Projeto](https://colab.research.google.com/drive/1lqwelLZn4aeQKYh3lJUSRFuUxkLReYB6#scrollTo=jkmrk8RdooP9)
+# <img src="https://avatars1.githubusercontent.com/u/26231823?s=280&v=4" width="80" height="80"> Desafio IA Generativa
+Explorando IA Generativa em um Pipeline de ETL com Python
 
 ### Ferramentas utilizadas
 
-<img src="https://pluspng.com/img-png/python-logo-png-open-2000.png" width="40" height="40"/>
-<img src="https://cdn-1.webcatalog.io/catalog/colaboratory/colaboratory-icon-filled.png" width="40" height="40"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" width="40" height="40"/>
-<img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" height="40"/>
+<img src="https://pluspng.com/img-png/python-logo-png-open-2000.png" width="40" height="40"/><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" width="40" height="40"/><img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" height="40"/>
 
 ### Objetivo do Projeto: 
 Criar um modelo GAN para gerar imagens de sequenciamento genético fictícias em preto e branco.
@@ -137,7 +129,7 @@ def train_gan(generator, discriminator, gan, synthetic_images, epochs=1, batch_s
         if e % 10 == 0:
             plot_generated_images(e, generator)
 
-def plot_generated_images(epoch, generator, examples=10, dim=(1, 10), figsize=(10, 1)):
+    def plot_generated_images(epoch, generator, examples=10, dim=(1, 10), figsize=(10, 1)):
     noise = np.random.normal(0, 1, size=[examples, 100])
     generated_images = generator.predict(noise)
     plt.figure(figsize=figsize)
@@ -149,7 +141,6 @@ def plot_generated_images(epoch, generator, examples=10, dim=(1, 10), figsize=(1
     plt.savefig(f"gan_generated_image_epoch_{epoch}.png")
     plt.show()
 
-train_gan(generator, discriminator, gan, synthetic_images, epochs=100, batch_size=128)
 
 
 
